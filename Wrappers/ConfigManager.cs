@@ -2,8 +2,8 @@ using System;
 using BepinEx;
 using BepinEx.Configuration;
 
-public namespace LCProSettings.Wrappers
-public class ConfigManager
+public namespace LCProSettings.Wrappers;
+public static class ConfigManager
 {
     #region Settings
     public static ConfigEntry<bool> InfiniteSprint;

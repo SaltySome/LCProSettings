@@ -6,6 +6,7 @@ using LCProSettings.GameObjects;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using System.Collections.Generic;
+using LCProSettings.Wrappers
 
 namespace LCProSettings
 {
@@ -34,9 +35,8 @@ namespace LCProSettings
             LogSource.LogInfo(_MOD_NAME + " has succesfully started");
             LogSource.LogInfo("Does this show up in github");
 
+            LogSource.LogInfo(ConfigManager.InfiniteSprint)
             InstanceGUI(this);
-
-
         }
 
         #region ExtractedMethods
