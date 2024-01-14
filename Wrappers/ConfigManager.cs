@@ -6,14 +6,14 @@ public namespace LCProSettings.Wrappers
 public class ConfigManager
 {
     #region Settings
-    public ConfigEntry<bool> InfiniteSprint;
-    public ConfigEntry<float> SprintMultiplier;
+    public static ConfigEntry<bool> InfiniteSprint;
+    public static ConfigEntry<float> SprintMultiplier;
     #endregion
 
-    public ConfigManager() {
+    public static ConfigManager() {
         //Assigning the values of config settings and pushing 
         //them to (GUID).cfg file under BepInEx/config
-        
+
         InfiniteSprint = Config.Bind("Movement Cheats",
         "Infinite Sprint",
         true,
