@@ -28,6 +28,7 @@ namespace LCProSettings
             HandleLogSource();
 
             LogSource.LogInfo(_MOD_NAME + " has succesfully started");
+            LogSource.LogInfo("Does this show up in github");
 
             InstanceGUI(this);
         }
