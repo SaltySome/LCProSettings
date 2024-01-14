@@ -1,9 +1,11 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
+using BepInEx.Configuration;
 using HarmonyLib;
 using LCProSettings.GameObjects;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace LCProSettings
 {
@@ -13,6 +15,8 @@ namespace LCProSettings
         private const string _MOD_GUID = "SaltySome.LCProSettings";
         private const string _MOD_NAME = "LC Pro Settings";
         private const string _MOD_VERSION = "1.0.0.0";
+
+        
 
         private readonly Harmony _harmony = new Harmony(_MOD_GUID);
 
@@ -31,6 +35,8 @@ namespace LCProSettings
             LogSource.LogInfo("Does this show up in github");
 
             InstanceGUI(this);
+
+
         }
 
         #region ExtractedMethods
