@@ -1,4 +1,3 @@
 {
-    "dotnet.preferCSharpExtension": false,
-    "omnisharp.loggingLevel": "warning"
+    "dotnet.preferCSharpExtension": false
 }
