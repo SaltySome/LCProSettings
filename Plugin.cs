@@ -35,7 +35,7 @@ namespace LCProSettings
             LogSource.LogInfo(_MOD_NAME + " has succesfully started");
             LogSource.LogInfo("Does this show up in github");
 
-            LogSource.LogInfo(ConfigManager.InfiniteSprint);
+            LogSource.LogInfo(ConfigManager.InfiniteSprint.Value);
             InstanceGUI(this);
         }
 
