@@ -1,12 +1,13 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
-using BepInEx.Configuration;
 using HarmonyLib;
 using LCProSettings.GameObjects;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using System.Collections.Generic;
-using LCProSettings.Wrappers
+using LCProSettings.Wrappers;
+using System;
+using System.CodeDom;
 
 namespace LCProSettings
 {
@@ -31,11 +32,10 @@ namespace LCProSettings
         {
             HandleInstance(this);
             HandleLogSource();
-
             LogSource.LogInfo(_MOD_NAME + " has succesfully started");
             LogSource.LogInfo("Does this show up in github");
 
-            LogSource.LogInfo(ConfigManager.InfiniteSprint)
+            LogSource.LogInfo(ConfigManager.InfiniteSprint);
             InstanceGUI(this);
         }
 

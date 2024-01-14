@@ -58,6 +58,7 @@
     <Compile Include="Patches\PlayerControllerPatch.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wrappers\ConfigManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
