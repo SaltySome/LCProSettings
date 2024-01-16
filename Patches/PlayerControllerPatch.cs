@@ -28,7 +28,10 @@ namespace LCProSettings.Patches
             // Updates the "sprintMultiplier" variable found in "GameNetcodeStuff" to be
             // the value the player puts for the "SprintMultiplier" in the config file(See "ConfigManager")
             // The "sprintMultiplier" is confusingly used when calculating the players movement
-            // even for walking and is lerped between 1f for not sprinting and 2.25f
+            // even for walking and is lerped between 1f for not sprinting and 2.25f for sprinting
+            // so that value inputed will not be excatley modled in the game but is pretty close
+            // when called every frame.
+            
             ___sprintMultiplier = ConfigManager.SprintMultiplier.Value;
         }
     }

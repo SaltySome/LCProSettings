@@ -12,6 +12,7 @@ namespace LCProSettings.GameObjects
 {
     internal class GUIManager : MonoBehaviour
     {
+        
         public void OnGUI()
         {
             UnityEngine.GUI.Box(new Rect(0, 0, 100, 100), new GUIContent("Hello"));
