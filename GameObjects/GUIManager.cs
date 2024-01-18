@@ -12,10 +12,14 @@ namespace LCProSettings.GameObjects
 {
     internal class GUIManager : MonoBehaviour
     {
-        
+        private GUICanvas _gUICanvas;
+        private void Awake()
+        {
+            _gUICanvas = new GUICanvas();
+        }
         public void OnGUI()
         {
-            UnityEngine.GUI.Box(new Rect(0, 0, 100, 100), new GUIContent("Hello"));
+            //TODO: Add function calls to GUICanvas to reactively render the config GUI
         }
     }
 }
