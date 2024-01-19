@@ -11,7 +11,7 @@ namespace LCProSettings.Wrappers
         public static ConfigEntry<float> SprintMultiplier;
         #endregion
 
-        static ConfigManager() {
+        public static void Initialize() {
             //Assigning the values of config settings and pushing 
             //them to (GUID).cfg file under BepInEx/config
 

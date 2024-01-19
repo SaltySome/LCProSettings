@@ -1,7 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
-using LCProSettings.GameObjects;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using System.Collections.Generic;
@@ -26,15 +25,13 @@ namespace LCProSettings
 
         public static ManualLogSource LogSource;
 
-        private GUIManager _gUIManager;
-
         private void Awake()
         {
             HandleInstance(this);
             HandleLogSource();
+            ConfigManager.Initialize();
+            HarmonyPatches(_instance);
             LogSource.LogInfo(_MOD_NAME + " has succesfully started");
-
-            InstanceGUI(this);
         }
 
         #region ExtractedMethods
@@ -57,16 +54,6 @@ namespace LCProSettings
         {
             sender._harmony.PatchAll();
         }
-
-        private static void InstanceGUI(Plugin sender)
-        {
-            var gameObject = new GameObject("GUIManager");
-            DontDestroyOnLoad(gameObject);
-            gameObject.hideFlags = HideFlags.HideAndDontSave;
-            gameObject.AddComponent<GUIManager>();
-            sender._gUIManager = (GUIManager)gameObject.GetComponent("GUIManager");
-        }
-
         #endregion
     }
 }

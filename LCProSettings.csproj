@@ -66,13 +66,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameObjects\GUIManager.cs" />
     <Compile Include="Patches\PlayerControllerPatch.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrappers\ConfigManager.cs" />
-    <Compile Include="Wrappers\GUILoader.cs" />
-    <Compile Include="GameObjects/GuiCanvas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -9,21 +9,24 @@ using LCProSettings.Wrappers;
 
 namespace LCProSettings.Patches
 {
-    [HarmonyPatch(typeof(PlayerControllerB))]
+    [HarmonyPatch(typeof(GameNetcodeStuff.PlayerControllerB))]
     internal class PlayerControllerPatch
     {
         [HarmonyPatch("Update")]
         [HarmonyPostfix]
-        private void UpdatePlayerSprintMeter(ref float ___sprintMeter)
+        private static void UpdatePlayerSprintMeter(ref float ___sprintMeter)
         {
             // Updates the "sprintMeter" varriable found in "GameNetcodeStuff" to always
             // be 1f if the player has InfiniteSprint set to true in the config(See "ConfigManager").
             // and otherwise it sets it to the original value and doesn't change it.
-            ___sprintMeter = ConfigManager.InfiniteSprint.Value ? 1f : ___sprintMeter;
+            if(ConfigManager.InfiniteSprint.Value == true)
+            {
+                ___sprintMeter = 1f;
+            }
         }
         [HarmonyPatch("Update")]
         [HarmonyPrefix]
-        private void UpdatePlayerSpeed(ref float ___sprintMultiplier)
+        private static void UpdatePlayerSpeed(ref float ___sprintMultiplier)
         {
             // Updates the "sprintMultiplier" variable found in "GameNetcodeStuff" to be
             // the value the player puts for the "SprintMultiplier" in the config file(See "ConfigManager")
